@@ -1,0 +1,11 @@
+package homeBanking;
+
+public class ContaCorrente extends Conta {
+	
+	public ContaCorrente (String id) {
+		super(id);
+	}
+	
+	float limiteCredito;
+
+}

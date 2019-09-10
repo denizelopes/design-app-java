@@ -1,0 +1,13 @@
+package laboratorio1;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		UserDatabase userDatabase = new UserDatabase();
+		System.out.println(userDatabase.obterTodosUsuarios());
+		
+		
+		
+	}
+	
+}

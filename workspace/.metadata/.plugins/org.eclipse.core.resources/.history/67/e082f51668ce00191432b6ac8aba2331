@@ -1,0 +1,89 @@
+package laboratorio2;
+
+import java.util.List;
+import java.util.Arrays;
+import java.util.Optional;
+
+enum TipoProduto {
+	Congelados, Bebidas, Eletrodomesticos, Eletronicos
+}
+
+class Produto {
+
+	String id;
+	String nome;
+	TipoProduto tipo;
+	String descricao;
+
+	public Produto(String id, String nome, TipoProduto tipo) {
+		this.id = id;
+		this.nome = nome;
+		this.tipo = tipo;
+	}
+
+	public Produto(String id, String nome, TipoProduto tipo, String descricao) {
+		this.id = id;
+		this.nome = nome;
+		this.tipo = tipo;
+		this.descricao = descricao;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public TipoProduto getTipo() {
+		return tipo;
+	}
+
+	public Optional<String> getDescricao() {
+		return Optional.ofNullable(descricao);
+	}
+
+	@Override
+	public String toString() {
+		return "Produto{" + "id='" + id + '\'' + ", nome='" + nome + '\'' + ", tipo=" + tipo + ", "
+				+ (this.getDescricao().isEmpty() ? "Descrição ausente" : "descricao='" + descricao + '\'') + '}';
+	}
+
+	public static List<Produto> obtemProdutos() {
+		List<Produto> produtos = Arrays.asList(new Produto("1", "Sorvete", TipoProduto.Congelados),
+				new Produto("2", "Cerveja", TipoProduto.Bebidas), new Produto("3", "Refrigerante", TipoProduto.Bebidas),
+				new Produto("4", "Geladeira", TipoProduto.Eletrodomesticos),
+				new Produto("5", "Chromecast", TipoProduto.Eletronicos,
+						"Com ele você pode assistir seus filmes e séries em uma TV que não tenha a função Smart"));
+		return produtos;
+	}
+}
+
+public class Exercicio_3 {
+
+	public static Optional<Produto> buscarProdutoPorIdComStream(String id) {
+		return Produto.obtemProdutos().stream().filter((item) -> (item.id.equals(id))).findFirst();
+	}
+
+	public static Optional<Produto> buscarProdutoPorId(String id) {
+		List<Produto> produtos = Produto.obtemProdutos();
+		for (Produto produto : produtos) {
+			if (produto.id.equals(id)) {
+				return Optional.of(produto);
+			}
+		}
+		return Optional.empty();
+	}
+
+	public static void main(String[] args) {
+		Optional<Produto> produto = buscarProdutoPorId("5");
+		if (produto.isPresent()) {
+			System.out.println(produto.get().toString());
+		} else {
+			System.out.println("Produto não encontrado.");
+		}
+
+	}
+
+}

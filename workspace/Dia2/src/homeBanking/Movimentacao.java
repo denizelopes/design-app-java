@@ -1,0 +1,18 @@
+package homeBanking;
+
+public class Movimentacao {
+	
+	
+	Date dataOperacao;
+	TipoOperacao x; // TED, DOC, etc
+	TipoOperacao operacao; // credito , debito
+	String descricao;
+	Float valor;
+	Conta destino 
+	Conta origem
+	
+	
+	
+	
+
+}

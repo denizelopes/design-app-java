@@ -1,0 +1,10 @@
+package laboratorio1.exercicio2;
+
+public class NotaFiscal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

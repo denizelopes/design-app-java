@@ -1,0 +1,30 @@
+package laboratorio3.parte1;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Function;
+
+public class Exercicio_3 {
+
+    public static void main(String[] args) {
+
+        Function<List<Integer>, Float> calcularMedia = (lista) -> {
+            int soma = 0;
+            for(int valor : lista){
+                soma += valor;
+            }
+            float media = soma / lista.size();
+            System.out.println(String.format("Media: %f", media));
+            return media;
+        };
+        
+        Function<Float, Boolean> verificaAprovacao = media -> media >= 6;
+        
+        Function<List<Integer>, Boolean> verificarAlunoAprovado = verificaAprovacao.compose(calcularMedia);
+
+        List<Integer> notas = Arrays.asList(10, 5, 8, 1, 9, 1);
+        System.out.println(String.format("Aluno aprovado? %b", verificarAlunoAprovado.apply(notas)));
+
+    }
+
+}

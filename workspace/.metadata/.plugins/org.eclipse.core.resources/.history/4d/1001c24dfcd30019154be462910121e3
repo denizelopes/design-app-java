@@ -1,0 +1,17 @@
+package homeBanking;
+
+import java.util.List;
+
+import laboratorio1.exercicio1.Usuario;
+
+public class ClienteDatabase {
+	
+	private static List<Cliente> clientes;
+	
+	public 
+
+	public static List<Cliente> obterTodosClientes() {
+        return clientes;
+    }
+	
+}

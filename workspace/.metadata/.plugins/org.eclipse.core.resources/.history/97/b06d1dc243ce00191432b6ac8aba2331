@@ -1,0 +1,20 @@
+package exercicios;
+
+interface ComplexOperator<G>{
+	
+	G apply(G parametro);
+}
+
+
+public class Exercicio_3 <G>{
+
+	public static <G> G calculoComplexoStatic (ComplexOperator<G> operador, G parametro) {
+		return operador.apply(parametro);
+	}
+
+	public static void main(String[] args) {
+		Double resultado = calculoComplexoStatic((numero) -> Math.sqrt(numero), 25d);
+		System.out.println("O resultao da raiz quadrada é " + resultado);
+	}
+
+}

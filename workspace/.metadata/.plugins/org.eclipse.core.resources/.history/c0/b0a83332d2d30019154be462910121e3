@@ -1,0 +1,25 @@
+package laboratorio1.exercicio2;
+
+public class NotaFiscal {
+
+	public double calculaImpostoTotal (Imposto[] impostos) {
+		
+		double total = 0;
+		
+		for(var imposto : impostos) {
+			double t = imposto.calculaImposto();
+			
+		}
+				
+		return total;
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		
+	}
+
+}

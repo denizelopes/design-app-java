@@ -1,0 +1,54 @@
+package homeBanking;
+
+public class Conta {
+	
+	private int id;
+	private double saldo;
+	
+	List<Movimentacao> movimentacoes;
+	
+	
+	public boolean sacar (float valor) {
+	
+		 // Saques acima de 1000 reais somente são permitidos entre 6:00 e 22:00
+		
+		if (valor >= this.saldo) {
+			// saca
+			return true;
+		}
+		return false;
+	}
+	
+	public void depositar (float valor) {
+		
+		//Depósitos acima de 50000 reais devem gerar notificações 
+		// para o COAF (órgão de fiscalização da receita federal).
+		
+	}
+	
+	public void tranferir(float valor, Conta conta) {
+		 // sem taxa - para o proprio destinatario
+		
+		// com taxa - para outras contas
+	}
+	
+	public abstract void cobrarTaxaMensal () {
+		
+		// Em base mensal, as contas de cada cliente sofrem débitos. 
+		// Se a conta é corrente a taxa é de R$ 1.00. 
+		// Se a conta é de investimento a taxa é de 0,01% do montante da conta.
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public double getSaldo() {
+		return saldo;
+	}
+	
+}

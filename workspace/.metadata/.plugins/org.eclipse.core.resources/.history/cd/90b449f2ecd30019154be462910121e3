@@ -1,0 +1,30 @@
+package laboratorio3.exercicio1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ConsoleDescriptionMain {
+
+    public static void main(String[] args) {
+    	
+    	
+        ConsolePortatil consolePortatil = new ConsolePortatil();
+        
+        ConsolePortatil psp = () -> consolePortatil.describe() + " PSP";
+        
+        ConsolePSPDecorator psp = new ConsolePSPDecorator(consolePortatil);
+        ConsolePSVitaDecorator psVita = new ConsolePSVitaDecorator(consolePortatil);
+        ConsoleNintendoSwitchDecorator nintendoSwitch = new ConsoleNintendoSwitchDecorator(consolePortatil);
+
+        List<ConsoleDeJogos> consolesList = new ArrayList<>();
+        consolesList.add(psp);
+        consolesList.add(psVita);
+        consolesList.add(nintendoSwitch);
+
+        for(ConsoleDeJogos console : consolesList){
+            System.out.println(console.describe());
+        }
+
+    }
+
+}

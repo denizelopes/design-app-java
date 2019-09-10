@@ -1,0 +1,11 @@
+package laboratorio1.exercicio2;
+
+public class ISS implements Imposto{
+	
+	@Override
+	public double calculaImposto(float valorProduto) {
+	
+		return this.valorProduto * 0.02;
+	}
+	
+}

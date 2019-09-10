@@ -1,0 +1,5 @@
+package laboratorio1.exercicio2;
+
+public interface Imposto {
+
+}

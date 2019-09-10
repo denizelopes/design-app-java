@@ -1,0 +1,20 @@
+package exercicios;
+
+interface ComplexOperator<G>{
+	
+	G apply(G parametro);
+}
+
+
+public class Exercicio_3 <G>{
+	
+	G calculoComplexo (ComplexOperator<G> operador, G parametro) {
+		return operador.apply(parametro);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

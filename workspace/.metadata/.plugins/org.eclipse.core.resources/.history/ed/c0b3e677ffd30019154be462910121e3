@@ -1,0 +1,20 @@
+package homeBanking;
+
+public class HomeBankingIMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Cliente cliente1 = new Cliente.Builder()
+				.set(p -> {
+					p.nome = "Denize";
+					p.sobrenome = "Altiva";
+					p.telefone = "(31)3333-3333"; 
+				}).build();
+		
+		Conta x = new ContaCorrente();
+		
+		
+	}
+
+}

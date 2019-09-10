@@ -1,0 +1,11 @@
+package laboratorio1.exercicio2;
+
+public class COFINS implements Imposto{
+	
+	@Override
+	public double calculaImposto(float valorProduto) {
+	
+		return valorProduto * 0.03;
+	}
+	
+}

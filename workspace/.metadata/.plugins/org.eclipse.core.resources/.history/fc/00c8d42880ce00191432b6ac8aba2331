@@ -1,0 +1,15 @@
+package laboratorio4;
+
+import java.util.function.BiFunction;
+import java.util.function.Function;
+
+public class Exercicio_1 {
+
+	public static void main(String[] args) {
+
+		BiFunction<Integer, Integer, Integer> multiplicaNumero = (numero, multiplicador) -> numero * multiplicador;
+		System.out.println(multiplicaNumeroPor2.apply(5));
+
+	}
+
+}

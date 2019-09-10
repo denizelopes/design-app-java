@@ -1,0 +1,54 @@
+package homeBanking;
+
+import java.util.List;
+
+public abstract class Conta {
+
+	private String id;
+	private double saldo;
+
+	List<Movimentacao> movimentacoes;
+
+	public Conta(String id) {
+		this.id = id;
+		this.saldo = 0.0;
+	}
+
+	public boolean sacar(float valor) {
+		
+		if(this.saldo > valor) {
+			this.saldo = this.saldo - valor;
+			return true;
+		} else {
+			return false;
+		}
+		
+		// Saques acima de 1000 reais somente são permitidos entre 6:00 e 22:00
+
+	}
+
+	public void depositar(float valor) {
+
+		// Depósitos acima de 50000 reais devem gerar notificações
+		// para o COAF (órgão de fiscalização da receita federal).
+		
+		this.saldo += valor;
+	}
+
+	public void tranferir(float valor, Conta conta) {
+		// sem taxa - para o proprio destinatario
+
+		// com taxa - para outras contas
+	}
+
+	public abstract void cobrarTaxaMensal();
+
+	public String getId() {
+		return this.id;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+}

@@ -1,0 +1,17 @@
+package homeBanking;
+
+public class ContaCorrente extends Conta {
+	
+	public ContaCorrente (String id) {
+		super(id);
+	}
+	
+	float limiteCredito;
+
+	@Override
+	public void cobrarTaxaMensal() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

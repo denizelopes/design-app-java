@@ -1,0 +1,43 @@
+package homeBanking;
+
+public class Conta {
+	
+	private int id;
+	private double saldo;
+	
+	List<Movimentacao> movimentacoes;
+	
+	public boolean sacar (float valor) {
+	
+		if (valor >= this.saldo) {
+			// saca
+			return true;
+		}
+		return false;
+	}
+	
+	public void depositar (float valor) {
+		
+	}
+	
+	public void tranferir(float valor, Conta conta) {
+		
+	}
+	
+	public void cobrarTaxa () {
+		
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public double getSaldo() {
+		return saldo;
+	}
+	
+}

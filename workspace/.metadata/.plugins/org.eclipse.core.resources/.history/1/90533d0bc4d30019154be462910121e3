@@ -1,0 +1,18 @@
+package laboratorio1;
+
+import java.util.List;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		//UserDatabase userDatabase = new UserDatabase();
+		
+		
+		UserDatabase.obterTodosUsuarios().forEach(usuario -> System.out.println(usuario.getNome()));
+
+		
+		
+		
+	}
+	
+}

@@ -1,0 +1,18 @@
+package homeBanking;
+
+public class Conta {
+	
+	private int id;
+	private double saldo;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public double getSaldo() {
+		return saldo;
+	}
+	
+}

@@ -1,0 +1,6 @@
+package homeBanking;
+
+public class ContaInvestimento extends Conta {
+
+	int tipoAplicacao;
+}
